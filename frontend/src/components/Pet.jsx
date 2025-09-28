@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Confetti from "react-confetti";
 
 export default function Pet() {
@@ -147,6 +147,7 @@ export default function Pet() {
           }
         `}
       </style>
+      <Typography variant="h5">Moodstrual</Typography>
     </Box>
   );
 }
