@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import Pet from "./components/Pet";
 import DailyForm from "./components/DailyForm";
 import PeriodCalendar from "./components/PeriodCalendar";
 import ChatBox from "./components/ChatBox";
-
 export default function App() {
   const userId = "user1";
   const [refresh, setRefresh] = useState(0);
@@ -57,14 +56,18 @@ export default function App() {
       >
         {/* Daily Log Form + Calendar side by side */}
         <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-          <Paper sx={{ flex: 1, minWidth: 300, p: 3, borderRadius: 3, boxShadow: 3 }}>
+          <Paper
+            sx={{ flex: 1, minWidth: 300, p: 3, borderRadius: 3, boxShadow: 3 }}
+          >
             <Typography variant="h6" gutterBottom>
               📝 Log Your Day
             </Typography>
             <DailyForm userId={userId} onLogged={handleLog} />
           </Paper>
 
-          <Paper sx={{ flex: 1, minWidth: 300, p: 3, borderRadius: 3, boxShadow: 3 }}>
+          <Paper
+            sx={{ flex: 1, minWidth: 300, p: 3, borderRadius: 3, boxShadow: 3 }}
+          >
             <Typography variant="h6" gutterBottom>
               📅 Cycle & Mood Calendar
             </Typography>
@@ -80,15 +83,25 @@ export default function App() {
             boxShadow: 3,
             display: "flex",
             flexDirection: "column",
-            height: 600,
+            height: 625,
           }}
         >
-          <Typography variant="h6" gutterBottom>
-            💬 Chatbot
-          </Typography>
-          <Box sx={{ flex: 1 }}>
-            <ChatBox userId={userId} />
-          </Box>
+          <Stack spacing={1}>
+            <Typography variant="h6" gutterBottom>
+              💬 Chatbot
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              Powered by Google Gemini. Please be careful what you share,
+              responses are AI-generated.
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              ⚠️ This chatbot is not a substitute for professional medical
+              advice. Always consult a doctor for health concerns.
+            </Typography>
+            <Box sx={{ flex: 1 }}>
+              <ChatBox userId={userId} />
+            </Box>
+          </Stack>
         </Paper>
       </Box>
     </Box>
