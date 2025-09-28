@@ -1,0 +1,26 @@
+# Node / Frontend
+node_modules/
+dist/
+.env
+.vite/
+
+# Backend / Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+.env
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs
+*.log
